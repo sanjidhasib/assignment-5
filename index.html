@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="container mx-auto mt-8">
+    <header>
+        <nav class="mb-12">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li>
+                                <a>Parent</a>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a>Item 3</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 gap-16">
+                        <li class="font-light text-slate-400 text-xl">Home</li>
+                        <li class="font-light text-slate-400 text-xl">About</li>
+                        <li class="font-light text-slate-400 text-xl">Destination</li>
+                        <li class="font-light text-slate-400 text-xl">Search</li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                  <div class=" flex bg-[#1DD1001B] border-x border-y border-[#1DD10066] gap-2 w-28 h-12 rounded-xl items-center justify-center ">
+                    <h2 class="text-[#1DD100] font-bold">Bus</h2>
+                    <img src="images/bus-icon.png" alt="">
+                  </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- banner section -->
+        <section>
+
+            <div>
+                <div class="hero w-full h-[600px] rounded-lg"
+                    style="background-image: url(images/banner.png);">
+                    <div class="hero-content text-center text-neutral-content">
+                        <div class="max-w-full">
+                            <h1 class="text-white mb-5 text-6xl font-bold">End-to-End Travel with</h1>
+                            <h1 class=" mb-5 text-6xl font-bold text-[#1DD100]">Green Line Paribahan</h1>
+                            <p class="mb-5 text-white">We worked hard and honest, continuously improving passenger
+                            comfort <br> and as a result <br> we were able to introduce the 1st ever Air- Conditioned bus services in Bangladesh</p>
+                            <button class="btn bg-[#1DD100] border-none font-extrabold">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- feed back part
+            <div>
+                <div class="stats shadow">
+                
+                    <div class="stat w-[308px] h-20 gap-0">
+                        <div class="stat-figure text-primary">
+                            <img src="images/people.png" alt="">
+                        </div>
+                        <div class="stat-value text-primary text-black">500K+</div>
+                        <div class="stat-desc">Registered users</div>
+                    </div>
+                
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
+                           <img src="images/ticket-cupon.png" alt="">
+                        </div>
+                        <div class="stat-value text-secondary text-black">1.7k</div>
+                        <div class="stat-desc">Tickets sold</div>
+                    </div>
+                
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
+                            <div class="avatar online">
+                                <div class="w-16 ">
+                                    <img src="images/stoppage.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-value">80k+</div>
+                        
+                        <div class="stat-desc text-secondary text-slate-300">Rental partners</div>
+                    </div>
+                
+                </div>
+            </div> -->
+
+
+        </section>
+    </header>
+    <main>
+    <!-- offer section -->
+    <section>
+        <div class="flex justify-center">
+            <h1 class=" font-bold text-4xl mt-28 mb-10">Best offers for you</h1>
+        </div>
+        <div class="flex justify-between">
+            <div class="flex">
+                <div>
+                    <div class="card w-[350px] h-[220px] bg-[#FFBF0F] ">
+                        <div class="card-body flex-col justify-left items-center rounded-r-none ">
+                            <h2 class="card-title font-extrabold">15% OFF
+                            </h2>
+                            <h6 class="font-semibold">on your next purchase</h6>
+                            <p>use by January 2024!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#FFBF0F] ">
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+                <div>
+                    <div class="card w-[223px] bg-[#FFBF0F] rounded--lg
+                                 h-[220px] ">
+                        <div class="card-body">
+                            <h2 class="card-title">NEW15
+                            </h2>
+                            <p>Coupon Code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <div class="card w-[350px] h-[220px] bg-[#F78C9C] ">
+                        <div class="card-body flex-col justify-left items-center rounded-r-none ">
+                            <h2 class="card-title font-extrabold">15% OFF
+                            </h2>
+                            <h6 class="font-semibold">on your next purchase</h6>
+                            <p>use by January 2024!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#F78C9C] ">
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+                <div>
+                    <div class="card w-[223px] bg-[#F78C9C] rounded--lg
+                                 h-[220px] ">
+                        <div class="card-body">
+                            <h2 class="card-title">NEW15
+                            </h2>
+                            <p>Coupon Code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </main>
+    
+</body>
+</html>
