@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Line</title>
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-<!-- 
-    <style>
-        .custom {
-            border-radius: 88px 88px 0 0;
-            border-top: 2px solid var(--primary-700, #1DD100);
-            background: #F7F8F8;
-        }
-    </style> -->
-
 
 </head>
 <body class="">
@@ -22,25 +14,6 @@
         <nav class="mb-12">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
-                    <div class="dropdown">
-                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </div>
-                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul class="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
-                        </ul>
-                    </div>
                     <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
@@ -72,7 +45,7 @@
                             <h1 class=" mb-5 text-6xl font-bold text-[#1DD100]">Green Line Paribahan</h1>
                             <p class="mb-5 text-white">We worked hard and honest, continuously improving passenger
                             comfort <br> and as a result <br> we were able to introduce the 1st ever Air- Conditioned bus services in Bangladesh</p>
-                            <a href="#tickets"><button class="btn bg-[#1DD100] border-none font-extrabold">Buy Tickets</button></a>
+                            <a href="#seat"><button class="btn bg-[#1DD100] border-none font-extrabold">Buy Tickets</button></a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +175,7 @@
                         <div
                             class=" flex bg-[#1DD1001B] border-x border-y border-[#1DD10066] gap-2 w-44 h-14 rounded-xl items-center justify-center ">
                             <img src="images/seat-green.png" alt="">
-                            <h2 class="text-[#1DD100] font-bold">40 Seats left</h2>
+                            <h2 class="text-[#1DD100] font-bold"><span id="seat-remaining">40 </span>Seats left</h2>
                 
                         </div>
                 
@@ -238,7 +211,7 @@
                 
                 <div class=" bg-white flex flex-col w-[400px] items-center justify-center">
                     <img class="" src="images/fare.png" alt="">
-                    <h1 class="font-bold text-3xl text-black">550 Tk</h1>
+                    <h1 class="font-bold text-3xl text-black"><span id="taka">550</span>Tk</h1>
                     <p class="font-normal">per seat</p>
                 </div>
 
@@ -269,68 +242,70 @@
                     
                             </div>
                             <!-- seat booking part -->
-                            <div class=" flex justify-end pb-10 pr-28">
+                            <div id="seat" class=" flex justify-end pb-10 pr-28">
                                 <div class=" flex bg-[#0307121A]  gap-2 w-28 h-14 rounded-xl items-center justify-center">
                                     <img src="images/tabler-icon-steering-wheel.png" alt="">
                                 </div>
                             </div>
                     
+                           <div id="btn-selector">
                             <div class="flex justify-evenly items-center">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">A</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">A1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">A2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">A3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">A4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('A1',event)" id="A1" class="kbd w-28 h-14 text-2xl text-[#03071280]">A1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('A2',event)" id="A2" class="kbd w-28 h-14 text-2xl text-[#03071280]">A2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('A3',event)" id="A3" class="kbd w-28 h-14 text-2xl text-[#03071280]">A3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('A4',event)" id="A4" class="kbd w-28 h-14 text-2xl text-[#03071280]">A4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">B</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">B1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">B2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">B3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">B4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('B1',event)" id="B1" class="kbd w-28 h-14 text-2xl text-[#03071280]">B1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('B2',event)" id="B2" class="kbd w-28 h-14 text-2xl text-[#03071280]">B2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('B3',event)" id="B3" class="kbd w-28 h-14 text-2xl text-[#03071280]">B3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('B4',event)" id="B4" class="kbd w-28 h-14 text-2xl text-[#03071280]">B4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">C</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">C1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">C2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">C3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">C4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('C1',event)" id="C1" class="kbd w-28 h-14 text-2xl text-[#03071280]">C1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('C2',event)" id="C2" class="kbd w-28 h-14 text-2xl text-[#03071280]">C2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('C3',event)" id="C3" class="kbd w-28 h-14 text-2xl text-[#03071280]">C3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('C4',event)" id="C4" class="kbd w-28 h-14 text-2xl text-[#03071280]">C4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">D</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">D1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">D2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">D3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">D4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('D1',event)" id="D1" class="kbd w-28 h-14 text-2xl text-[#03071280]">D1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('D2',event)" id="D2" class="kbd w-28 h-14 text-2xl text-[#03071280]">D2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('D3',event)" id="D3" class="kbd w-28 h-14 text-2xl text-[#03071280]">D3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('D4',event)" id="D4" class="kbd w-28 h-14 text-2xl text-[#03071280]">D4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">E</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">E1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">E2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">E3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">E4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('E1',event)" id="E1" class="kbd w-28 h-14 text-2xl text-[#03071280]">E1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('E2',event)" id="E2" class="kbd w-28 h-14 text-2xl text-[#03071280]">E2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('E3',event)" id="E3" class="kbd w-28 h-14 text-2xl text-[#03071280]">E3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('E4',event)" id="E4" class="kbd w-28 h-14 text-2xl text-[#03071280]">E4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">F</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">F1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">F2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">F3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">F4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('F1',event)" id="F1" class="kbd w-28 h-14 text-2xl text-[#03071280]">F1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('F2',event)" id="F2" class="kbd w-28 h-14 text-2xl text-[#03071280]">F2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('F3',event)" id="F3" class="kbd w-28 h-14 text-2xl text-[#03071280]">F3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('F4',event)" id="F4" class="kbd w-28 h-14 text-2xl text-[#03071280]">F4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
                                 <h1 class="font-semibold text-2xl text-[#03071280]">G</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">G1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">G2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">G3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">G4</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('G1',event)" id="G1" class="kbd w-28 h-14 text-2xl text-[#03071280]">G1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('G2',event)" id="G2" class="kbd w-28 h-14 text-2xl text-[#03071280]">G2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('G3',event)" id="G3" class="kbd w-28 h-14 text-2xl text-[#03071280]">G3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('G4',event)" id="G4" class="kbd w-28 h-14 text-2xl text-[#03071280]">G4</kbd>
                             </div>
                             <div class="flex justify-evenly items-center mt-10">
-                                 <h1 class="font-semibold text-2xl text-[#03071280]">H</h1>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">H1</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">H2</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">H3</kbd>
-                                <kbd class="kbd w-28 h-14 text-2xl text-[#03071280]">H4</kbd>
+                                <h1 class="font-semibold text-2xl text-[#03071280]">H</h1>
+                                <kbd onclick="handleKeyboardButtonpress('H1',event)" id="H1" class="kbd w-28 h-14 text-2xl text-[#03071280]">H1</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('H2',event)" id="H2" class="kbd w-28 h-14 text-2xl text-[#03071280]">H2</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('H3',event)" id="H3" class="kbd w-28 h-14 text-2xl text-[#03071280]">H3</kbd>
+                                <kbd onclick="handleKeyboardButtonpress('H4',event)" id="H4" class="kbd w-28 h-14 text-2xl text-[#03071280]">H4</kbd>
                             </div>
+                           </div>
                     
                     
                         </div>
@@ -341,7 +316,7 @@
                 <div>
 
                         <div class="p-8">
-                            <h1 class="font-bold text-5xl pb-4">Selected seat</h1>
+                            <h1 class="font-semibold text-3xl pb-4">Selected seat</h1>
                             <hr>
 
                         </div>
@@ -350,35 +325,37 @@
                             <div class=" bg-[#F7F8F8] rounded-lg">
 
                                     <div class="flex justify-between p-8">
-                                        <p class="font-semibold text-4xl">seats<span ><sub class="text-white rounded-lg bg-green-500 p-1">0</sub></span> </p>
-                                        <h3 class="font-semibold text-4xl ">Class</h3>
-                                        <h3 class="font-semibold text-4xl">Price</h3>
+                                        <p class="font-normal text-2xl">seats<span ><sup id="seat-bought" class="text-white rounded-full bg-green-500 p-1">0</sup></span> </p>
+                                        <h3 class="font-normal text-2xl ">Class</h3>
+                                        <h3 class="font-normal text-2xl">Price</h3>
                                     </div>
 
                                     <div>
                                         <hr>
-                                        <div>
-
-                                        </div>
+                                       <ul f
+                                       id="selected-place-container"
+                                       class="selected-place-container flex flex-col"
+                                       >
+                                       </ul>
                                         <hr>
                                     </div>
 
                                     <div class="flex justify-between p-8 mb-5">
-                                        <h3 class="font-semibold text-4xl ">Total price</h3>
-                                        <p class="font-semibold text-4xl">BDT<span> 0</span> </p>     
+                                        <h3 class="font-normal text-2xl ">Total price</h3>
+                                        <p id="two"class="font-normal text-2xl">BDT<span id="taka"> 0</span></p>     
                                     </div>
 
                                     <div class=" flex justify-center  w-full items-center">
-                                        <label class="input outline-none border-none  flex items-center rounded-3xl gap-2 h-20">
-                                            <input type="text" class="grow" placeholder="Have you any cupon"  />
-                                            <a href="#tickets"><button class="btn bg-[#1DD100] rounded-3xl font-extrabold text-white">Buy Tickets</button></a>
+                                        <label class="input outline-none border-none  flex items-center rounded-3xl gap-2 h-15">
+                                            <input type="text"id="textInput" class="grow" placeholder="Have you any cupon"  />
+                                            <a href="#tickets"><button id="readbutton" onclick="getvalue()" class="btn bg-[#1DD100] rounded-2xl font-extrabold text-white">Apply</button></a>
                                             </div>
                                             
                                         </label>
 
                                         <div class="flex justify-between p-8">
-                                            <h3 class="font-semibold text-4xl ">Grand Total price</h3>
-                                            <p class="font-semibold text-4xl">BDT<span> 0</span> </p>
+                                            <h3 class="font-normal text-2xl ">Grand Total price</h3>
+                                            <p class="font-normal text-2xl">BDT<span id="Grand"> 0</span> </p>
                                         </div>
 
                                     </div>
@@ -410,7 +387,7 @@
                                     </div>
                                     <!-- Submit Button -->
                                     <div class="flex items-center justify-between">
-                                        <button type="submit"
+                                        <button onclick="modal()" type="submit"
                                             class="bg-green-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded-3xl w-full ">Submit</button>
                                     </div>
                                     <div class="flex justify-between">
@@ -434,7 +411,7 @@
     </main>
 
     <footer>
-        <footer class="footer p-10 bg-neutral text-neutral-content">
+        <footer class="footer mt-10 p-10 bg-neutral text-neutral-content">
             <aside>
                 <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
                     clip-rule="evenodd" class="fill-current">
@@ -466,6 +443,17 @@
             </nav>
         </footer>
     </footer>
-    
+    <dialog id="my_modal_4" class="modal">
+        <div class="modal-box w-auto max-w-5xl flex flex-col justify-center items-center">
+            <img src="images/success.png" alt="">
+            <p class="py-4">Thank you for Booking Our Bus Seats. <br>
+            <span class="text-slate-400 font-light">Shortly you will find a confirmation in your email.</span></p>
+            <div class="modal-action">
+                    <button onclick="loading()" id="modalbtn"class="btn w-full text-white bg-green-700 rounded-lg">coninue</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="javascript.js"></script>
 </body>
+
 </html>

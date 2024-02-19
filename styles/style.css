@@ -1,0 +1,10 @@
+.selected-place-container li {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size:medium;
+    list-style: numeric;
+    font: weight 6px;
+    font-size: large;
+    padding: 10px;
+}
